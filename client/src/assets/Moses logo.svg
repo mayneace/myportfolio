@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Outer circle -->
+  <circle cx="512" cy="512" r="485" fill="#000000"/>
+
+  <!-- Peak 1 (tall, leftmost): flat top, left edge straight, right edge bends
+       partway down to run parallel with Peak 2's left edge -->
+  <polygon points="342,205 393,205 475,397 337,723 123,723" fill="#ffffff"/>
+
+  <!-- Peak 2 (tall, middle): flat top, right edge bends to run parallel
+       with Peak 3's left edge -->
+  <polygon points="590,205 641,205 720,398 583,723 372,723" fill="#ffffff"/>
+
+  <!-- Peak 3 (short, rightmost): simple flat-top trapezoid -->
+  <polygon points="717,497 754,497 852,723 620,723" fill="#ffffff"/>
+
+  <!-- Base bar -->
+  <polygon points="148,753 875,753 849,787 174,787" fill="#ffffff"/>
+</svg>
