@@ -12,14 +12,13 @@ const allowedOrigins = (process.env.CLIENT_URL || "")
 app.use(
   cors({
     origin: (origin, callback) => {
-      // allow requests with no origin (like Postman, curl, server-to-server)
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error(`Not allowed by CORS: ${origin}`));
+        callback(null, false); // reject cleanly, no thrown error
       }
     },
-  }),
+  })
 );
 
 app.use(express.json());
