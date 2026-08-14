@@ -4,6 +4,8 @@ import contactRoutes from "./routes/contactsRoutes.js";
 
 const app: Application = express();
 
+app.set("trust proxy", 1);
+
 const allowedOrigins = (process.env.CLIENT_URL || "https://127.0.0.1:5174,https://moses-jet.vercel.app")
   .split(",")
   .map((o) => o.trim())
