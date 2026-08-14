@@ -32,7 +32,7 @@ const projectsData: ProjectItem[] = [
     title: "Quote Generator Web App",
     desc: "A minimalist single-page application built to deliver fresh, inspirational advice at the click of a button. Designed based on Frontend Mentor challenges, this project focuses on API integration, responsive visual hierarchy, and polished user interaction., filters, and historic analytics data.",
     tags: ["JavaScript", "React", "API", "HTML5"],
-    link: "https://advice-mayneace.vercel.app/",
+    link: "https://advice-two-beta.vercel.app/",
     github: "https://github.com/mayneace/Advice",
     image: advice,
   },
