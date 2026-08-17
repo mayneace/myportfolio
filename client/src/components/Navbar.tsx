@@ -40,12 +40,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => {
   }, []);
 
   return (
-    <div className="fixed top-4 sm:top-8 w-full items-center z-50 px-4 sm:px-[clamp(1rem,11.46vw,200px)]">
+    <div className="fixed top-3 sm:top-5 w-full items-center z-50 px-4 sm:px-[clamp(1rem,11.46vw,200px)]">
       <header
-        className={`flex justify-between border-2 backdrop-blur-xs sm:backdrop-blur-sm transition-all duration-500 px-7 rounded-full transform group hover:-translate-y-px hover:scale-y-105 shadow-[0_10px_30px_rgba(0,0,0,0.10)] inset-shadow-sm ${
+        className={`relative z-20 flex justify-between border backdrop-blur-xs sm:backdrop-blur-sm transition-all duration-500 px-7 rounded-full transform group  shadow-[0_10px_30px_rgba(0,0,0,0.10)] inset-shadow-sm font-[Michroma] ${
           isDarkMode
             ? "bg-slate-900/10 border-slate-800/30 hover:shadow-xs"
-            : "bg-linear-to-r from-gray-400/20 via-gray-300/60 to-gray-200/90 border-3 border-white/25 hover:shadow-xs inset-shadow-white/40"
+            : "bg-linear-to-r from-gray-400/20 via-gray-300/60 to-gray-200/90 border-white/25 hover:shadow-xs inset-shadow-white/40"
         }`}
       >
         {/* Logo Brand */}
@@ -91,27 +91,27 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => {
           {/* Dark Mode Switcher */}
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`p-1.5 sm:p-2 rounded-full border-2 ${
+            className={`p-2 sm:p-2 rounded-full border-2 cursor-pointer transition-all duration-300 transform ${
               isDarkMode
                 ? "border-slate-800 bg-slate-950 text-yellow-600 hover:bg-slate-900"
                 : "border-gray-300/60 bg-slate-100/80 text-cyan-500 hover:bg-white"
             }`}
             aria-label="Toggle Theme"
           >
-            {isDarkMode ? <FiSun size={20} /> : <IoMoonOutline size={20} />}
+            {isDarkMode ? <FiSun size={25} /> : <IoMoonOutline size={25} />}
           </button>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden p-1.5 sm:p-2 rounded-full border ${
+            className={`md:hidden p-2 sm:p-2 rounded-full border transition-all duration-500 transform ${
               isDarkMode
                 ? "border-slate-800 bg-slate-950 text-white hover:bg-slate-900"
                 : "border-gray-300 bg-slate-50 text-black hover:bg-slate-200"
             }`}
             aria-label="Toggle Mobile Menu"
           >
-            {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+            {mobileMenuOpen ? <X size={25} /> : <Menu size={25} />}
           </button>
         </div>
       </header>

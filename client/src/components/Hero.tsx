@@ -23,6 +23,7 @@ import {
   // X,
   // ArrowDown,
 } from "lucide-react";
+import ParticlesBackground from "./ParticlesBackground";
 // import AssembleSection from "./AssembleSection";
 
 interface RotationState {
@@ -156,15 +157,29 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
+      className="relative min-h-screen md:h-screen w-full md:overflow-hidden flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
     >
+      <ParticlesBackground
+        className={`absolute inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-60"}`}
+        density={90}
+        linkDistance={140}
+        speed={0.6}
+        color={isDarkMode ? "rgba(255,255,255,0.8)" : "rgba(15,15,20,0.7)"}
+        lineColor={isDarkMode ? "255,255,255" : "15,15,20"}
+        interactionMode="repulse"
+        interactionRadius={140}
+        grabOnHover
+        grabDistance={160}
+        spawnOnClick
+        clickSpawnCount={6}
+      />
       <div
-        className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-30 sm:gap-0 lg:gap-0 lg:w-full transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
+        className="relative z-10 pointer-events-none flex flex-col lg:flex-row lg:items-center lg:justify-between gap-30 sm:gap-0 lg:gap-0 lg:w-full transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
               in-[.assemble-hidden]:opacity-10 in-[.assemble-hidden]:-translate-x-24 in-[.assemble-hidden]:blur-md
               in-[.assemble-active]:opacity-100 in-[.assemble-active]:translate-x-0 in-[.assemble-active]:blur-0"
       >
         {/* left column */}
-        <div className="flex flex-col items-start gap-6 sm:gap-6 text-left w-full lg:w-1/2">
+        <div className="flex flex-col items-start gap-5 sm:gap-6 text-left w-full lg:w-1/2">
           {/* Status Pill Indicator */}
           <div
             className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 text-[10px] sm:text-xs font-semibold tracking-wider uppercase transition-colors font-[Orbitron] shadow-[0_9px_10px_rgba(0,0,0,0.10)] backdrop-blur-xs ${
@@ -181,24 +196,21 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
           </div>
 
           {/* Headings with Responsive Font Scaling */}
-          <div className="space-y-1 sm:space-y-2">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight">
-              I'm{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-indigo-400 to-purple-500 drop-shadow-[0_2px_15px_rgba(99,102,241,0.2)]">
-                Moses,
-              </span>
+          <div className="flex flex-col md:flex-row gap-2 sm:gap-6 text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-7xl font-[Michroma] font-black">
+            <h1 className="tracking-tight text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-indigo-400 to-purple-600">
+              Moses
             </h1>
             <h2
-              className={`text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-tight ${isDarkMode ? "text-white" : "text-slate-900"}`}
+              className={`tracking-tight ${isDarkMode ? "text-white" : "text-slate-900"}`}
             >
               Adebayo
             </h2>
           </div>
 
           {/* Dynamic Typewriter Skill Subheading */}
-          <div className="flex items-center h-8 font-mono">
+          <div className="flex items-center h-8 font-[Michroma]">
             <span
-              className={`text-sm sm:text-base md:text-lg xl:text-xl font-bold border-l-4 pl-3 py-0.5 ${
+              className={`text-md sm:text-base md:text-lg xl:text-xl tracking-tighter border-l-4 pl-3 py-0.5${
                 isDarkMode
                   ? "border-cyan-400 text-cyan-400"
                   : "border-purple-600 text-purple-600"
@@ -211,9 +223,9 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
 
           {/* Description Paragraph with fixed text wraps */}
           <p
-            className={`text-sm sm:text-base md:text-lg max-w-xl leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
+            className={`text-md sm:text-base md:text-lg max-w-xl leading-relaxed tracking-wide font-[Montserrat] ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
           >
-            I build production-grade web applications that{" "}
+            Transforming complex functionality into <br />
             <span
               className={
                 isDarkMode
@@ -221,17 +233,17 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                   : "text-slate-800 font-medium"
               }
             >
-              transforms complex functionality
+              seamless, delightful user experience
             </span>{" "}
-            into seamless, delightful user experiences.
+            through <br /> production-grade websites.
           </p>
 
           {/* Responsive Call-to-Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto mt-2 sm:mt-4">
+          <div className="flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto mt-2 sm:mt-4 pointer-events-auto font-[Michroma]">
             <a
               href="#contact"
               // {...hoverProps}
-              className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-3xl text-sm font-semibold transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 group shadow-[0_10px_25px_rgba(0,0,0,0.13)] backdrop-blur-3xl ${
+              className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-3xl text-sm transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 group shadow-[0_10px_25px_rgba(0,0,0,0.13)] backdrop-blur-3xl font-bold ${
                 isDarkMode
                   ? "bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]"
                   : "border-white/30 border-2 bg-linear-to-br from-indigo-600/10 to-purple-600/20 hover:from-indigo-500/15 hover:to-purple-600/15 hover:text-gray-700 text-gray-950 hover:shadow-xs"
@@ -248,7 +260,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
               // {...hoverProps}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-3xl text-sm font-semibold border transition-all duration-300 transform hover:scale-101 active:scale-100 hover:-translate-y-1 active:translate-y-0 group shadow-[0_10px_25px_rgba(0,0,0,0.13)] backdrop-blur-xs ${
+              className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-3xl text-sm border transition-all duration-300 transform hover:scale-101 active:scale-100 hover:-translate-y-1 active:translate-y-0 group shadow-[0_10px_25px_rgba(0,0,0,0.13)] backdrop-blur-xs ${
                 isDarkMode
                   ? "border-slate-800 bg-slate-950 hover:bg-slate-900/50 hover:border-slate-700 hover:text-white text-gray-300"
                   : "border-white/20 border-2 bg-linear-to-br from-gray-400/5 to-gray-300/80 hover:from-gray-400/15 hover:to-gray-400/25 hover:border-white/30 text-gray-950  hover:shadow-xs"
@@ -260,13 +272,13 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-3 mt-4 sm:mt-6">
+          <div className="flex gap-6 mt-4 sm:mt-6 pointer-events-auto">
             {(
               [
                 {
                   icon: (
                     <FiGithub
-                      size={18}
+                      size={26}
                       className={` ${isDarkMode ? "text-indigo-200" : "text-indigo-600"}`}
                     />
                   ),
@@ -275,7 +287,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                 {
                   icon: (
                     <Mail
-                      size={18}
+                      size={26}
                       className={` ${isDarkMode ? "text-red-200" : "text-red-600"}`}
                     />
                   ),
@@ -284,7 +296,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                 {
                   icon: (
                     <IoLogoWhatsapp
-                      size={18}
+                      size={26}
                       className={` ${isDarkMode ? "text-green-200" : "text-green-600"} `}
                     />
                   ),
@@ -323,7 +335,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
           // onMouseLeave={handleMouseLeave}
         >
           <div
-            className="relative group animate-bounce-sm"
+            className="relative group animate-bounce-sm pointer-events-auto"
             style={{
               transform: `perspective(1200px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
               transition: "transform 0.2s ease-out",
@@ -375,7 +387,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
 
             {/* Cyber badges */}
             <div
-              className={`absolute animate-pulse -bottom-1 -left-2 sm:-left-4 border font-mono text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-[0_0_15px_rgba(99,102,241,0.2)] tracking-wider flex items-center gap-1.5 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border-indigo-500/30 text-cyan-400" : "border-purple-100/20 border-2 bg-linear-to-br from-indigo-600/20 to-purple-600/20 text-gray-800 hover:scale-x-105 shadow-[0_10px_25px_rgba(0,0,0,0.13)]"}`}
+              className={`absolute animate-pulse -bottom-1 -left-2 sm:-left-4 border font-mono text-\[10px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-\[0\_0\_15px\_rgba(99,102,241,0.2)] tracking-wider flex items-center gap-1.5 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border-indigo-500/30 text-cyan-400" : "border-purple-100/20 border-2 bg-linear-to-br from-indigo-600/20 to-purple-600/20 text-gray-800 hover:scale-x-105 shadow-\[0\_10px\_25px\_rgba(0,0,0,0.13)]"}`}
             >
               <Cpu
                 size={10}
@@ -385,7 +397,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
             </div>
 
             <div
-              className={`absolute animate-pulse -top-1 -right-2 sm:-right-4  font-mono text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl shadow-[0_0_15px_rgba(6,182,212,0.2)] tracking-wider flex items-center gap-1 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border border-cyan-500/30 text-purple-400" : "border-white/20 border-2 bg-linear-to-br from-gray-400/30 to-gray-300/40 text-purple-700 hover:scale-x-105 shadow-[0_10px_25px_rgba(0,0,0,0.13)]"}`}
+              className={`absolute animate-pulse -top-1 -right-2 sm:-right-4  font-mono text-\[10px] sm:text-xs px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl shadow-\[0\_0\_15px\_rgba(6,182,212,0.2)] tracking-wider flex items-center gap-1 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border border-cyan-500/30 text-purple-400" : "border-white/20 border-2 bg-linear-to-br from-gray-400/30 to-gray-300/40 text-purple-700 hover:scale-x-105 shadow-\[0\_10px\_25px\_rgba(0,0,0,0.13)]"}`}
             >
               <span
                 className={`${isDarkMode ? "text-cyan-400" : "text-cyan-600"} `}

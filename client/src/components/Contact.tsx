@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import { FiGithub } from "react-icons/fi";
-import { Mail } from "lucide-react";
-import { IoLogoWhatsapp } from "react-icons/io";
+
 
 interface ContactProps {
   isDarkMode: boolean;
 }
 
-interface SocialLink {
-  label: string;
-  icon: React.ReactNode;
-  href: string;
-}
 
 // 1. Define the structural shape of your form fields using TypeScript
 interface ContactFormData {
@@ -75,7 +68,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   return (
     <section
       id="contact"
-      className="relative flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-auto gap-3"
+      className="relative flex flex-col justify-center py-20 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-auto gap-3 font-[Michroma]"
     >
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4 mb-12 sm:mb-16">
         <span
@@ -198,65 +191,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
         )}
       </div>
 
-      {/* Social Links */}
-      <div className="flex items-center justify-center gap-5 sm:gap-10 md:gap-20 mt-4 sm:mt-16 w-full">
-        {(
-          [
-            {
-              icon: (
-                <FiGithub
-                  size={60}
-                  className={` ${isDarkMode ? "text-indigo-200" : "text-indigo-600"}`}
-                />
-              ),
-              href: "https://github.com/mayneace",
-              label: "GitHub",
-            },
-            {
-              icon: (
-                <Mail
-                  size={60}
-                  className={` ${isDarkMode ? "text-red-200" : "text-red-600"}`}
-                />
-              ),
-              href: "https://mailto:mosesadebayour@gmail.com",
-              label: "Mail",
-            },
-            {
-              icon: (
-                <IoLogoWhatsapp
-                  size={60}
-                  className={` ${isDarkMode ? "text-green-200" : "text-green-600"} `}
-                />
-              ),
-              href: "https://wa.me/2348172621849",
-              label: "WhatsApp",
-            },
-          ] as SocialLink[]
-        ).map((social: SocialLink, index: number) => {
-          const isMail = social.href.startsWith("mailto:");
-
-          return (
-            <a
-              key={index}
-              href={social.href}
-              target={isMail ? undefined : "_blank"}
-              rel={isMail ? undefined : "noreferrer"}
-              // {...hoverProps}
-              className={`p-2.5 sm:py-3.5 sm:px-8 rounded-4xl border flex flex-col gap-4 items-center justify-center transition-all duration-500 transform hover:-translate-y-1 active:translate-y-0 group shadow-[0_10px_15px_rgba(0,0,0,0.14)] backdrop-blur-xs hover:scale-110 active:scale-100 ${
-                isDarkMode
-                  ? "border-slate-800 bg-slate-950/80 hover:bg-slate-900 hover:border-cyan-500/50 hover:text-cyan-400 text-gray-400"
-                  : "border-white/30 border-2 bg-linear-to-br from-gray-500/5 to-gray-300/80 hover:bg-gray-50 hover:border-white/10 hover:text-black text-gray-600 hover:shadow-xs"
-              }`}
-            >
-              {social.icon}
-              <span className="text-xs font-medium tracking-wide">
-                {social.label}
-              </span>
-            </a>
-          );
-        })}
-      </div>
     </section>
   );
 };

@@ -12,9 +12,9 @@ export const Skills: React.FC<skillsProps> = ({ isDarkMode }) => {
   return (
     <section
       id="skills"
-      className="relative min-h-screen flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-mt-5 gap-3"
+      className="relative min-h-screen flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-mt-5 gap-3 font-[Michroma]"
     >
-      <div>
+      <div className="flex flex-col gap-5 md:gap-10">
         <div className="flex flex-col items-center text-center gap-3 sm:gap-4 mb-8 sm:mb-7">
           <span
             className={`text-[10px] sm:text-[11px] border-2 font-bold tracking-widest uppercase py-1 px-3 rounded-full ${
@@ -34,7 +34,7 @@ export const Skills: React.FC<skillsProps> = ({ isDarkMode }) => {
         </div>
 
         <AssembleSection>
-          <div className="grid grid-cols-16 gap-2  font-[Orbitron]">
+          <div className="grid grid-cols-16 gap-2 font-[Orbitron]">
             {skills.map((skill, index) => {
               // Assign the component to a capitalized reference so React handles it properly
               const SkillIcon = skill.icon;
@@ -73,8 +73,8 @@ export const Skills: React.FC<skillsProps> = ({ isDarkMode }) => {
               );
             })}
           </div>
-          <SkillsMarquee isDarkMode={isDarkMode} />
         </AssembleSection>
+        <SkillsMarquee isDarkMode={isDarkMode} />
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
-import nodemailer from "nodemailer";
-import dns from "node:dns";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface EmailOptions {
   name: string;
@@ -7,29 +8,18 @@ interface EmailOptions {
   message: string;
 }
 
-dns.setDefaultResultOrder("ipv4first");
-
-export const sendNotificationEmail = async ({
-  name,
-  email,
-  message,
-}: EmailOptions) => {
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: Number(process.env.EMAIL_PORT),
-    secure: true,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
-
-  await transporter.sendMail({
-    from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-    to: process.env.NOTIFY_EMAIL,
+export const sendNotificationEmail = async ({ name, email, message }: EmailOptions) => {
+  const { data, error } = await resend.emails.send({
+    from: "Portfolio Contact <onboarding@resend.dev>", // swap once you verify your own domain
+    to: process.env.NOTIFY_EMAIL as string,
     replyTo: email,
     subject: `New message from ${name}`,
-    text: message,
     html: `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b><br/>${message}</p>`,
   });
+
+  if (error) {
+    throw new Error(`Resend error: ${JSON.stringify(error)}`);
+  }
+
+  return data;
 };

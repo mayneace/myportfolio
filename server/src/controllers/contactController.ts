@@ -15,13 +15,13 @@ export const createContact = async (req: Request, res: Response) => {
 
     return res.status(201).json({
       success: true,
-      message: "Message sent successfully",
+      message: "✅Message sent successfully, Thank you for reaching out!",
       data: { id: contact._id },
     });
   } catch (error) {
     console.error(error);
     return res
       .status(500)
-      .json({ success: false, message: "Something went wrong" });
+      .json({ success: false, message: "❌Something went wrong, please use the social links below" });
   }
 };

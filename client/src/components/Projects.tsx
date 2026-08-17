@@ -51,7 +51,7 @@ const Project: React.FC<ProjectProps> = ({ isDarkMode }) => {
   return (
     <section
       id="projects"
-      className="relative flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-auto gap-3"
+      className="relative flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-auto gap-3 font-[Michroma]"
     >
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -104,7 +104,7 @@ const Project: React.FC<ProjectProps> = ({ isDarkMode }) => {
                     {project.title}
                   </h3>
                   <p
-                    className={`text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 ${
+                    className={`text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 font-[Ubuntu] ${
                       isDarkMode ? "text-gray-400" : "text-gray-600"
                     }`}
                   >

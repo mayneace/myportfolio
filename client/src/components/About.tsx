@@ -43,7 +43,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-mt-10 gap-12"
+      className="relative min-h-screen flex flex-col justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-mt-10 gap-12 font-[Ubuntu]"
     >
       {/* SECTION HEADER */}
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4">
@@ -56,7 +56,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
         >
           About Me
         </span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wide">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wide font-[Michroma]">
           Overview
         </h2>
         <div className="h-0.75 w-10 sm:w-12 bg-linear-to-r from-cyan-950 via-cyan-200 to-cyan-950 rounded-full" />
@@ -143,9 +143,9 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
               <p
                 className={`text-sm sm:text-sm leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
               >
-                As a dedicated Full-Stack Developer, I specialize in engineering
+                As a dedicated Full-Stack Developer who specializes in engineering
                 responsive, secure, and lightning-fast web applications. My
-                expertise is grounded in the entire TypeScript ecosystem,
+                expertise is grounded in the entire TypeScript and JavaScript ecosystem,
                 allowing me to build systems from the ground up with clean,
                 scalable architectures.
               </p>
