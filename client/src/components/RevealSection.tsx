@@ -20,7 +20,7 @@ const RevealSection: React.FC<RevealSectionProps> = ({ children }) => {
           }
         });
       },
-      { threshold: 0.2 },
+      { threshold: 0.1 },
     ); // 0.1 means 10% of the element is visible
 
     if (domRef.current) {
@@ -33,8 +33,8 @@ const RevealSection: React.FC<RevealSectionProps> = ({ children }) => {
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-1000 ease-in-out transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`transition-all duration-500 ease-in-out transform ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-15"
       }`}
     >
       {children}

@@ -1,7 +1,7 @@
 import React from "react";
 import { skills } from "../types/skillsData";
 import { SkillsMarquee } from "./SkillsMaequee";
-import AssembleSection from "./AssembleSection";
+// import AssembleSection from "./AssembleSection";
 // import { skills } from './skillsData';
 import "../fonts.css";
 
@@ -34,47 +34,47 @@ export const Skills: React.FC<skillsProps> = ({ isDarkMode }) => {
           <div className="h-0.75 w-10 sm:w-12 bg-linear-to-r from-cyan-950/10 via-cyan-500 to-cyan-950/10  rounded-full animate-pulse" />
         </div>
 
-        <AssembleSection>
-          <div className="grid grid-cols-16 gap-2 font-[Orbitron Variable]">
-            {skills.map((skill, index) => {
-              // Assign the component to a capitalized reference so React handles it properly
-              const SkillIcon = skill.icon;
+        {/* <AssembleSection> */}
+        <div className="grid grid-cols-16 gap-2 font-[Orbitron Variable]">
+          {skills.map((skill, index) => {
+            // Assign the component to a capitalized reference so React handles it properly
+            const SkillIcon = skill.icon;
 
-              return (
-                <div
-                  key={index}
-                  className={`relative items-start overflow-hidden rounded-2xl p-5 flex flex-col justify-between group ${skill.gridClasses}
+            return (
+              <div
+                key={index}
+                className={`relative items-start overflow-hidden rounded-2xl p-5 flex flex-col justify-between group ${skill.gridClasses}
                  border-2 transition-colors duration-500 backdrop-blur-xs group shadow-[0_5px_15px_rgba(0,0,0,0.1)] ${
                    isDarkMode
                      ? "border-slate-900 bg-slate-700/10 text-cyan-700 hover:border-cyan-500/40 hover:bg-slate-900/80"
                      : "border-white/20 border-2 bg-linear-to-br from-gray-400/5 to-gray-300/80 hover:from-gray-400/10 hover:to-gray-300/40 hover:border-white/50 hover:shadow-xs"
                  }
                 `}
-                >
-                  {/* Top Left: Icon Badge */}
-                  <div className="flex p-2 items-center justify-center rounded-lg bg-slate-800/10 border border-slate-400/30 shadow-inner group-hover:scale-105 transition-transform duration-500">
-                    <SkillIcon className="w-6 h-6 " />
-                  </div>
-
-                  {/* Bottom Left: Info Info */}
-                  <div className="z-10 flex flex-col items-start">
-                    <h3 className="text-sm font-bold tracking-wide">
-                      {skill.name}
-                    </h3>
-                    <p className="text-[8px] font-bold uppercase text-gray-500 tracking-[3px] mt-0.5">
-                      {skill.category}
-                    </p>
-                  </div>
-
-                  {/* Giant Faint Icon Background Watermark */}
-                  <div className="absolute right-2 bottom-2 text-cyan-900/10 select-none pointer-events-none group-hover:text-cyan-900 group-hover:scale-110 transition-all duration-500 ease-out">
-                    <SkillIcon className="w-22 h-22 rounded-sm" />
-                  </div>
+              >
+                {/* Top Left: Icon Badge */}
+                <div className="flex p-2 items-center justify-center rounded-lg bg-slate-800/10 border border-slate-400/30 shadow-inner group-hover:scale-105 transition-transform duration-500">
+                  <SkillIcon className="w-6 h-6 " />
                 </div>
-              );
-            })}
-          </div>
-        </AssembleSection>
+
+                {/* Bottom Left: Info Info */}
+                <div className="z-10 flex flex-col items-start">
+                  <h3 className="text-sm font-bold tracking-wide">
+                    {skill.name}
+                  </h3>
+                  <p className="text-[8px] font-bold uppercase text-gray-500 tracking-[3px] mt-0.5">
+                    {skill.category}
+                  </p>
+                </div>
+
+                {/* Giant Faint Icon Background Watermark */}
+                <div className="absolute right-2 bottom-2 text-cyan-900/10 select-none pointer-events-none group-hover:text-cyan-900 group-hover:scale-110 transition-all duration-500 ease-out">
+                  <SkillIcon className="w-22 h-22 rounded-sm" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* </AssembleSection> */}
         <SkillsMarquee isDarkMode={isDarkMode} />
       </div>
     </section>

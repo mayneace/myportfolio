@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import avatar from "../assets/Gemini_Generated_Image_tffv8btffv8btffv.png";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
-import AssembleSection from "./AssembleSection";
+// import AssembleSection from "./AssembleSection";
 
 interface AboutProps {
   isDarkMode: boolean;
@@ -63,14 +63,10 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
       </div>
 
       {/* TWO-COLUMN CONTENT WITH ASSEMBLY EFFECT */}
-      <AssembleSection>
+      {/* <AssembleSection> */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 w-full">
           {/* LEFT COLUMN: IMAGE ASSEMBLY */}
-          <div
-            className="flex justify-center lg:justify-start w-full lg:w-1/2 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
-              in-[.assemble-hidden]:opacity-0 in-[.assemble-hidden]:-translate-x-24 in-[.assemble-hidden]:blur-sm
-              in-[.assemble-active]:opacity-100 in-[.assemble-active]:translate-x-0 in-[.assemble-active]:blur-0"
-          >
+          <div className="flex justify-center lg:justify-start w-full lg:w-1/2 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform">
             <TiltWrapper className="relative group/tilt max-w-sm w-full flex justify-center">
               <div className="relative rounded-2xl bg-linear-to-tr from-purple-600/30 via-[#d946ef]/30 to-blue-300/30 p-0.5 shadow-[0_0_50px_rgba(168,85,247,0.4)]">
                 <img
@@ -131,11 +127,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
           </div>
 
           {/* RIGHT COLUMN: TEXT GRID ASSEMBLY */}
-          <div
-            className="flex flex-col gap-8 sm:gap-5 w-full lg:w-1/2 text-left transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
-              in-[.assemble-hidden]:opacity-0 in-[.assemble-hidden]:translate-x-24 in-[.assemble-hidden]:blur-sm
-              in-[.assemble-active]:opacity-100 in-[.assemble-active]:translate-x-0 in-[.assemble-active]:blur-0"
-          >
+          <div className="flex flex-col gap-8 sm:gap-5 w-full lg:w-1/2 text-left transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform">
             <div className="space-y-4 sm:space-y-3">
               <h3 className="text-xl sm:text-2xl font-bold">
                 Bridging Code and User Experience
@@ -201,7 +193,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
             </div>
           </div>
         </div>
-      </AssembleSection>
+      {/* </AssembleSection> */}
     </section>
   );
 };
