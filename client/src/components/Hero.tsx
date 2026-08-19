@@ -160,7 +160,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       className="relative min-h-screen md:h-screen w-full flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
     >
       <ParticlesBackground
-        className={`absolute inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
+        className={`md:absolute hidden inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
         density={90}
         linkDistance={140}
         speed={0.6}
@@ -174,7 +174,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
         clickSpawnCount={6}
       />
       <div
-        className="relative z-10 pointer-events-none flex flex-col lg:flex-row lg:items-center lg:justify-between gap-30 sm:gap-0 lg:gap-0 lg:w-full transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
+        className="md:relative z-10 pointer-events-none flex flex-col lg:flex-row lg:items-center lg:justify-between gap-30 sm:gap-0 lg:gap-0 lg:w-full transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
               in-[.assemble-hidden]:opacity-10 in-[.assemble-hidden]:-translate-x-24 in-[.assemble-hidden]:blur-md
               in-[.assemble-active]:opacity-100 in-[.assemble-active]:translate-x-0 in-[.assemble-active]:blur-0"
       >
@@ -223,7 +223,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
 
           {/* Description Paragraph with fixed text wraps */}
           <p
-            className={`text-md sm:text-base md:text-lg max-w-xl leading-relaxed tracking-wide font-[Ubuntu] ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
+            className={`text-sm sm:text-base md:text-lg max-w-xl leading-relaxed tracking-wide font-[Ubuntu] ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
           >
             Transforming complex functionality into <br />
             <span
