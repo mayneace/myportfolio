@@ -1,45 +1,61 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Hero from "../components/Hero";
-import About from "../components/About";
-import Skills from "../components/Skills";
 import RevealSection from "../components/RevealSection";
-import Project from "../components/Projects";
-import Contact from "../components/Contact";
+
+// Lazy-loaded below-the-fold sections
+const About = lazy(() => import("../components/About"));
+const Skills = lazy(() => import("../components/Skills"));
+const Project = lazy(() => import("../components/Projects"));
+const Contact = lazy(() => import("../components/Contact"));
 
 interface HomepageProps {
   isDarkMode: boolean;
 }
 
+const SectionFallback: React.FC = () => (
+  <div className="h-64 w-full animate-pulse rounded-lg bg-gray-200 dark:bg-gray-800" />
+);
+
 const Homepage: React.FC<HomepageProps> = ({ isDarkMode }) => {
   return (
-    <div className={`flex flex-col gap-20 lg:gap-5 min-h-screen mx-auto`}>
+    <div className="flex flex-col gap-20 lg:gap-5 min-h-screen mx-auto">
       <div id="home">
         <RevealSection>
-          <Hero isDarkMode={isDarkMode} />
+          <Suspense fallback={<SectionFallback />}>
+            <Hero isDarkMode={isDarkMode} />
+          </Suspense>
         </RevealSection>
       </div>
 
       <div id="about">
         <RevealSection>
-          <About isDarkMode={isDarkMode} />
+          <Suspense fallback={<SectionFallback />}>
+            <About isDarkMode={isDarkMode} />
+          </Suspense>
         </RevealSection>
       </div>
 
       <div id="skills">
         <RevealSection>
-          <Skills isDarkMode={isDarkMode} />
+          <Suspense fallback={<SectionFallback />}>
+            <Skills isDarkMode={isDarkMode} />
+          </Suspense>
         </RevealSection>
       </div>
 
       <div id="projects">
         <RevealSection>
-          <Project isDarkMode={isDarkMode} />
+          <Suspense fallback={<SectionFallback />}>
+            <Project isDarkMode={isDarkMode} />
+          </Suspense>
         </RevealSection>
       </div>
 
       <div id="contact">
         <RevealSection>
-          <Contact isDarkMode={isDarkMode} />
+          <Suspense fallback={<SectionFallback />}>
+            <Contact isDarkMode={isDarkMode} />
+          </Suspense>
         </RevealSection>
       </div>
     </div>
