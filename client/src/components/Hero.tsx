@@ -160,7 +160,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       className="relative min-h-screen md:h-screen w-full flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
     >
       <ParticlesBackground
-        className={`md:absolute hidden inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
+        className={`md:flex absolute hidden inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
         density={90}
         linkDistance={140}
         speed={0.6}

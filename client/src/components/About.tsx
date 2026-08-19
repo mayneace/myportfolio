@@ -48,7 +48,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
       {/* SECTION HEADER */}
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4">
         <span
-          className={`text-[10px] sm:text-[11px] border-2 font-bold tracking-widest uppercase py-1 px-3 rounded-full  backdrop-blur-sm font-[michroma] ${
+          className={`text-[10px] sm:text-[11px] border-2 font-bold tracking-widest uppercase py-1 px-3 rounded-full backdrop-blur-sm font-[michroma] ${
             isDarkMode
               ? "bg-slate-950 border-slate-800 text-cyan-400 opacity-40"
               : "border-white/40 bg-gray-300/50 text-cyan-600 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"

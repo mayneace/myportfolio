@@ -18,7 +18,7 @@ const AssembleSection: React.FC<AssembleProps> = ({ children }) => {
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.05 },
     );
 
     if (sectionRef.current) {
