@@ -48,7 +48,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
       {/* SECTION HEADER */}
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4">
         <span
-          className={`text-[10px] sm:text-[11px] border-2 font-bold tracking-widest uppercase py-1 px-3 rounded-full  backdrop-blur-sm ${
+          className={`text-[10px] sm:text-[11px] border-2 font-bold tracking-widest uppercase py-1 px-3 rounded-full  backdrop-blur-sm font-[michroma] ${
             isDarkMode
               ? "bg-slate-950 border-slate-800 text-cyan-400 opacity-40"
               : "border-white/40 bg-gray-300/50 text-cyan-600 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
@@ -59,7 +59,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wide font-[Michroma]">
           Overview
         </h2>
-        <div className="h-0.75 w-10 sm:w-12 bg-linear-to-r from-cyan-950 via-cyan-200 to-cyan-950 rounded-full" />
+        <div className="h-0.75 w-10 sm:w-12 bg-linear-to-r from-cyan-950/10 via-cyan-500 to-cyan-950/10 rounded-full animate-pulse" />
       </div>
 
       {/* TWO-COLUMN CONTENT WITH ASSEMBLY EFFECT */}
@@ -143,11 +143,11 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
               <p
                 className={`text-sm sm:text-sm leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
               >
-                As a dedicated Full-Stack Developer who specializes in engineering
-                responsive, secure, and lightning-fast web applications. My
-                expertise is grounded in the entire TypeScript and JavaScript ecosystem,
-                allowing me to build systems from the ground up with clean,
-                scalable architectures.
+                As a dedicated Full-Stack Developer who specializes in
+                engineering responsive, secure, and lightning-fast web
+                applications. My expertise is grounded in the entire TypeScript
+                and JavaScript ecosystem, allowing me to build systems from the
+                ground up with clean, scalable architectures.
               </p>
               <p
                 className={`text-sm sm:text-sm leading-relaxed ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}

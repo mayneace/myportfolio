@@ -10,6 +10,10 @@
   flex-direction: column;
 }
 
+body {
+  cursor: url("/client/src/assets/Cursordark.png"), auto;
+}
+
 @theme {
   --font-heading: "Space Grotesk", sans-serif;
   --font-sans: "Inter", sans-serif;

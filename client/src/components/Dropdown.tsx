@@ -23,9 +23,9 @@ const Dropdown: React.FC<DropdownProps> = ({
       <div
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
-        className={`fixed inset-0 z-10 backdrop-blur-md transition-opacity duration-500 ease-in-out md:hidden ${
+        className={`fixed inset-0 z-10 backdrop-blur-lg transition-opacity duration-500 ease-in-out md:hidden ${
           mobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
+            ? "opacity-100  pointer-events-auto"
             : "opacity-0 pointer-events-none"
         } ${isDarkMode ? "bg-black/40" : "bg-black/10"}`}
       />
@@ -33,12 +33,12 @@ const Dropdown: React.FC<DropdownProps> = ({
       <div
         className={`absolute top-full left-0 right-0 mx-6 mt-2 p-4 rounded-2xl border backdrop-blur-xs flex flex-col gap-2 md:hidden transition-all duration-300 ease-in-out z-50 ${
           mobileMenuOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto visible"
+            ? "opacity-100 translate-y-1 overflow-y-scroll pointer-events-auto visible"
             : "opacity-0 -translate-y-4 pointer-events-none invisible"
         } ${
           isDarkMode
             ? "bg-slate-900/40 border-slate-800/70 shadow-[0_40px_40px_rgba(0,0,0,0.7)]"
-            : "bg-linear-to-r from-gray-400/30 via-gray-300/99 to-gray-200/30 border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.20)] border-2"
+            : "bg-linear-to-r from-gray-400/30 via-gray-300/99 to-gray-400/40 border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.20)] border-2"
         }`}
       >
         {navItems.map((tab) => {

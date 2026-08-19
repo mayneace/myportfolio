@@ -157,10 +157,10 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen md:h-screen w-full md:overflow-hidden flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
+      className="relative min-h-screen md:h-screen w-full flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
     >
       <ParticlesBackground
-        className={`absolute inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-60"}`}
+        className={`absolute inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
         density={90}
         linkDistance={140}
         speed={0.6}
@@ -182,7 +182,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
         <div className="flex flex-col items-start gap-5 sm:gap-6 text-left w-full lg:w-1/2">
           {/* Status Pill Indicator */}
           <div
-            className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 text-[10px] sm:text-xs font-semibold tracking-wider uppercase transition-colors font-[Orbitron] shadow-[0_9px_10px_rgba(0,0,0,0.10)] backdrop-blur-xs ${
+            className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 text-[10px] sm:text-xs font-base tracking-wide uppercase transition-colors font-[Michroma] shadow-[0_9px_10px_rgba(0,0,0,0.10)] backdrop-blur-xs ${
               isDarkMode
                 ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
                 : "bg-linear-to-br from-emerald-100/15 to-emerald-500/15 border-emerald-500/5 text-emerald-600"
@@ -223,7 +223,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
 
           {/* Description Paragraph with fixed text wraps */}
           <p
-            className={`text-md sm:text-base md:text-lg max-w-xl leading-relaxed tracking-wide font-[Montserrat] ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
+            className={`text-md sm:text-base md:text-lg max-w-xl leading-relaxed tracking-wide font-[Ubuntu] ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}
           >
             Transforming complex functionality into <br />
             <span

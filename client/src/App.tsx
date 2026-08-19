@@ -6,6 +6,8 @@ import BgLayout from "./components/BgLayout";
 // import About from "./components/About";
 import { useState } from "react";
 import Footer from "./components/footer";
+import Projectspage from "./pages/Projectspage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -14,10 +16,15 @@ function App() {
     <>
       <BgLayout isDarkMode={isDarkMode}>
         <BrowserRouter>
+          <ScrollToTop />
           <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           <Routes>
             <Route path="/" element={<Homepage isDarkMode={isDarkMode} />} />
             {/* <Route path="./components/About.tsx" element={<About />} /> */}
+            <Route
+              path="/Projectspage"
+              element={<Projectspage isDarkMode={isDarkMode} />}
+            />
           </Routes>
           <Footer isDarkMode={isDarkMode} />
         </BrowserRouter>

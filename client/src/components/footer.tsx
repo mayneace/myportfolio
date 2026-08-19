@@ -2,6 +2,7 @@ import React from "react";
 import { FiGithub } from "react-icons/fi";
 import { Mail } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { useLocation } from "react-router-dom";
 
 interface FooterProps {
   isDarkMode: boolean;
@@ -16,6 +17,20 @@ interface SocialLink {
 const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
   // const [isHovering, setIsHovering] = useState(false);
 
+  const location = useLocation();
+
+  const handleBackToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    if (location.pathname === "/") {
+      // On Homepage → scroll to the #home section
+      document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // On any other page (e.g. Projectspage) → just scroll that page to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   // Helpers to assign custom hover listeners dynamically
   const hoverProps = {
     // onMouseEnter: () => setIsHovering(true),
@@ -26,12 +41,12 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
     <footer className="relative overflow-hidden">
       {/* Giant clipped wordmark */}
       <div
-        className={`relative h-28 sm:h-36 md:h-44 overflow-hidden flex items-end justify-center ${
+        className={`relative pt-10 overflow-hidden flex items-end justify-center ${
           isDarkMode ? "" : ""
         }`}
       >
         <p
-          className={`translate-y-1/4 whitespace-nowrap select-none pointer-events-none font-[Orbitron] font-extrabold leading-none tracking-tight text-[2rem] sm:text-[9rem] md:text-[8rem] ${
+          className={`translate-y-1/4 whitespace-nowrap select-none pointer-events-none font-[Michroma] font-extrabold leading-none tracking-widest text-[22px] sm:text-[39px] md:text-[48px] lg:text-[68px] xl:text-[90px] 2xl:text-[135px] ${
             isDarkMode ? "text-white/5" : "text-black/5"
           }`}
         >
@@ -40,18 +55,18 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
       </div>
 
       <div
-        className={`z-20 py-8 sm:py-12 border-t-5 text-center transform-all duration-500 ease-in-out transform scroll-auto backdrop-blur-xs inset-shadow-sm font-[Orbitron] ${
+        className={`z-20 py-8 sm:py-12 border-t-5 text-center transform-all duration-500 ease-in-out transform scroll-auto backdrop-blur-xs inset-shadow-sm font-[Michroma] ${
           isDarkMode
             ? "inset-shadow-slate/80 border-slate-900/50 bg-slate-950/60"
             : "inset-shadow-white/80 border-white bg-linear-to-br from-gray-400/30 via-gray-200/60 to-gray-100/90"
         }`}
       >
         <div className="flex flex-col w-full items-center md:items-start justify-center py-10 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden gap-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 sm:w-full">
-            <div className="flex flex-col item-center justify-center md:justify-between gap-5 md:gap-25">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4 sm:w-full">
+            <div className="flex flex-col items-start md:justify-between gap-5 md:gap-25">
               {/* Status Pill Indicator */}
               <div
-                className={`flex w-50 md:w-45 items-center mx-auto justify-center md:justify-start gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 text-[10px] sm:text-[8px] font-semibold tracking-wider uppercase transition-colors font-[Orbitron] shadow-[0_9px_10px_rgba(0,0,0,0.10)] backdrop-blur-xs ${
+                className={`flex w-50 md:w-45 items-center justify-center md:justify-start gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 text-[10px] sm:text-[8px] font-semibold tracking-tight uppercase transition-colors shadow-[0_9px_10px_rgba(0,0,0,0.10)] backdrop-blur-xs  ${
                   isDarkMode
                     ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
                     : "bg-linear-to-br from-emerald-100/15 to-emerald-500/15 border-emerald-500/5 text-emerald-600"
@@ -133,7 +148,8 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
 
             <div className="">
               <a
-                href="#home"
+                href="#top"
+                onClick={handleBackToTop}
                 {...hoverProps}
                 className="text-[10px] sm:text-xs text-gray-500 hover:text-cyan-400 transition-colors"
               >

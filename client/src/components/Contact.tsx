@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
-
 interface ContactProps {
   isDarkMode: boolean;
 }
-
 
 // 1. Define the structural shape of your form fields using TypeScript
 interface ContactFormData {
@@ -68,7 +66,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   return (
     <section
       id="contact"
-      className="relative flex flex-col justify-center py-20 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-auto gap-3 font-[Michroma]"
+      className="relative flex flex-col justify-center pt-25 pb-20 px-6 sm:px-[clamp(1rem,11.46vw,200px)] overflow-hidden scroll-auto gap-3 font-[Michroma]"
     >
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4 mb-12 sm:mb-16">
         <span
@@ -83,7 +81,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
           Get In Touch
         </h2>
-        <div className="h-1 w-10 sm:w-12 bg-linear-to-r from-cyan-400 to-indigo-500 rounded-full" />
+        <div className="h-0.75 w-10 sm:w-15 bg-linear-to-r from-cyan-950/10 via-cyan-500 to-cyan-950/10 rounded-full animate-pulse" />
       </div>
 
       <div
@@ -190,7 +188,6 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
           </div>
         )}
       </div>
-
     </section>
   );
 };

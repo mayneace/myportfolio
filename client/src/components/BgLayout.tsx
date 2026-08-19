@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from "react";
+import cursorDark from "../assets/Cursordark32.png";
+import cursorLight from "../assets/Cursorlight32.png";
 
 // Update the interface to accept isDarkMode from the parent
 interface LayoutProps {
@@ -57,6 +59,9 @@ export const BgLayout: React.FC<LayoutProps> = ({ children, isDarkMode }) => {
   return (
     <div
       ref={containerRef}
+      style={{
+        cursor: `url(${isDarkMode ? cursorLight : cursorDark}) 0 0, auto`,
+      }}
       // onMouseMove={handleMouseMove}
       className={`min-h-screen font-sans transition-colors duration-800 overflow-hidden selection:bg-cyan-500 selection:text-black relative ${
         isDarkMode

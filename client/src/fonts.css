@@ -1,0 +1,48 @@
+/* Self-hosted fonts (replaces the Google Fonts @import block that was in index.html).
+   Put this file at src/fonts.css and import it once, at the top of your
+   entry file (e.g. src/main.tsx), like: import "./fonts.css";
+
+   Each of these is provided by the matching @fontsource package —
+   see the npm install command block below. */
+
+@import "@fontsource/barlow/100.css";
+@import "@fontsource/barlow/200.css";
+@import "@fontsource/barlow/300.css";
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/barlow/800.css";
+@import "@fontsource/barlow/900.css";
+@import "@fontsource/barlow/100-italic.css";
+@import "@fontsource/barlow/400-italic.css";
+@import "@fontsource/barlow/700-italic.css";
+
+@import "@fontsource-variable/roboto";
+
+@import "@fontsource/google-sans-flex";
+
+@import "@fontsource/space-grotesk/300.css";
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+
+@import "@fontsource-variable/orbitron";
+
+@import "@fontsource/michroma";
+
+@import "@fontsource-variable/montserrat";
+
+@import "@fontsource/ubuntu/300.css";
+@import "@fontsource/ubuntu/400.css";
+@import "@fontsource/ubuntu/500.css";
+@import "@fontsource/ubuntu/700.css";
+@import "@fontsource/ubuntu/300-italic.css";
+@import "@fontsource/ubuntu/400-italic.css";
+
+@import "@fontsource-variable/science-gothic";
+
+@import "@fontsource-variable/science-gothic/full.css";
+
+@import "@fontsource-variable/orbitron/wght.css";

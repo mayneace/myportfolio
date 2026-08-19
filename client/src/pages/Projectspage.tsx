@@ -1,13 +1,10 @@
 import React from "react";
-// import useEmblaCarousel from "embla-carousel-react";
 import { Code2 } from "lucide-react";
 import { VscLinkExternal } from "react-icons/vsc";
 import space from "../assets/wudjsbv8g93aarlhvbud.jpg";
 import advice from "../assets/syo43ktrlu3huqaqye2c.jpg";
 import echo from "../assets/Screenshot 2026-07-30 112123.png";
-import { Link } from "react-router-dom";
-import { RxDoubleArrowRight } from "react-icons/rx";
-// import Projectspage from "../pages/Projectspage";
+import ParticlesBackground from "../components/ParticlesBackground";
 
 interface ProjectItem {
   title: string;
@@ -18,7 +15,7 @@ interface ProjectItem {
   image?: string;
 }
 
-interface ProjectProps {
+interface ProjectspageProps {
   isDarkMode: boolean;
 }
 
@@ -50,27 +47,41 @@ const projectsData: ProjectItem[] = [
   // Add more projects here to see the full carousel effect!
 ];
 
-const Project: React.FC<ProjectProps> = ({ isDarkMode }) => {
+const Projectspage: React.FC<ProjectspageProps> = ({ isDarkMode }) => {
   return (
     <section
       id="projects"
-      className="relative flex flex-col justify-center pt-25 px-6 sm:px-[clamp(1rem,11.46vw,200px)] scroll-auto gap-3 font-[michroma]"
+      className="relative flex flex-col justify-center mt-30 px-6 sm:px-[clamp(1rem,11.46vw,200px)] scroll-auto gap-3 font-[michroma]"
     >
+      <ParticlesBackground
+        className={`absolute inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
+        density={90}
+        linkDistance={140}
+        speed={0.6}
+        color={isDarkMode ? "rgba(255,255,255,0.8)" : "rgba(15,15,20,0.7)"}
+        lineColor={isDarkMode ? "255,255,255" : "15,15,20"}
+        interactionMode="repulse"
+        interactionRadius={140}
+        grabOnHover
+        grabDistance={160}
+        spawnOnClick
+        clickSpawnCount={6}
+      />
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-        <span
+        {/* <span
           className={`text-[10px] sm:text-[11px] border-2 font-bold tracking-widest uppercase py-1 px-3 rounded-full ${
             isDarkMode
               ? "bg-slate-950 border-slate-800 text-cyan-300 opacity-40"
               : "border-white/40 bg-gray-300/50 text-cyan-600 shadow-[0_10px_10px_rgba(0,0,0,0.1)]"
           }`}
         >
-          Work
-        </span>
+          Projects
+        </span> */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
           Portfolio
         </h2>
-        <div className="h-0.75 w-10 sm:w-15 bg-linear-to-r from-cyan-950/10 via-cyan-500 to-cyan-950/10 rounded-full animate-pulse" />
+        <div className="h-0.75 w-10 sm:w-15 bg-linear-to-r from-cyan-950/1 via-cyan-500 to-cyan-950/1 rounded-full animate-pulse" />
       </div>
 
       {/* Embla Viewport */}
@@ -82,7 +93,7 @@ const Project: React.FC<ProjectProps> = ({ isDarkMode }) => {
           {projectsData.map((project, index) => (
             <div key={index} className="">
               <div
-                className={`flex flex-col gap-10 md:gap-5 md:flex-row items-center justify-between w-full group h-full rounded-3xl md:text-left transition-all duration-500 transform backdrop-blur-xs ${
+                className={`flex flex-col gap-10 md:gap-5 md:flex-row items-center justify-between w-full group h-full rounded-3xl md:text-left transition-all duration-500 transform ${
                   isDarkMode ? "" : ""
                 }`}
               >
@@ -161,22 +172,9 @@ const Project: React.FC<ProjectProps> = ({ isDarkMode }) => {
             </div>
           ))}
         </div>
-
-        <Link to="/Projectspage" className="">
-          <button
-            className={`flex items-center justify-center gap-4 px-6 sm:px-8 py-3 sm:py-3.5 rounded-3xl text-md font-semibold transition-all duration-500 transform hover:-translate-y-1 active:translate-y-0 group shadow-[0_10px_25px_rgba(0,0,0,0.13)] backdrop-blur-3xl cursor-pointer ${
-              isDarkMode
-                ? "bg-linear-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]"
-                : "border-white/30 border-2 bg-linear-to-br from-indigo-600/10 to-purple-600/20 hover:from-indigo-500/15 hover:to-purple-600/15 hover:text-gray-700 text-gray-950 hover:shadow-xs"
-            }`}
-          >
-            View All Projects{" "}
-            <RxDoubleArrowRight size={35} className="animate-pulse" />{" "}
-          </button>
-        </Link>
       </div>
     </section>
   );
 };
 
-export default Project;
+export default Projectspage;
