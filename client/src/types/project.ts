@@ -59,7 +59,7 @@ export const projectsData: ProjectItem[] = [
     link: "https://advice-two-beta.vercel.app/",
     github: "https://github.com/mayneace/Advice",
     image: advice,
-    featured: true,
+    featured: false,
   },
   {
     title: "ECHO - Civic Engagement Platform [DEMO PAGE] 📃",

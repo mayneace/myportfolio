@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen md:h-screen w-full flex 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
+      className="relative min-h-screen md:h-screen w-full sm:flex items-center 2xl:justify-between gap-15 sm:gap-35 md:gap-40 lg:gap-15 xl:gap-15 2xl:gap-60 lg:flex-row px-6 sm:px-[clamp(1rem,11.46vw,200px)] pt-35 sm:pt-35 md:pt-45 lg:pt-44 xl:pt-40 2xl:pt-50"
     >
       <ParticlesBackground
         className={`md:flex absolute hidden inset-0 z-0 transition-colors duration-500 transform ${isDarkMode ? "opacity-25" : "opacity-30"}`}
@@ -114,7 +114,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
         clickSpawnCount={6}
       />
       <div
-        className="md:relative z-10 pointer-events-none flex flex-col lg:flex-row lg:items-center lg:justify-between gap-30 sm:gap-0 lg:gap-0 lg:w-full transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
+        className="md:relative z-10 pointer-events-none flex flex-col items-center lg:flex-row lg:items-center lg:justify-between gap-30 sm:gap-0 lg:gap-0 lg:w-full transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform
               in-[.assemble-hidden]:opacity-10 in-[.assemble-hidden]:-translate-x-24 in-[.assemble-hidden]:blur-md
               in-[.assemble-active]:opacity-100 in-[.assemble-active]:translate-x-0 in-[.assemble-active]:blur-0"
       >
@@ -136,7 +136,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
           </div>
 
           {/* Headings with Responsive Font Scaling */}
-          <div className="flex flex-col md:flex-row gap-2 sm:gap-6 text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl 2xl:text-7xl font-[Michroma] font-black">
+          <div className="flex flex-col md:flex-row gap-2 sm:gap-6 text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-7xl font-[Michroma] font-black">
             <h1 className="tracking-tight text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-indigo-400 to-purple-600">
               Moses
             </h1>
@@ -368,7 +368,9 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
             isDarkMode ? "border-slate-600" : "border-gray-400"
           }`}
         >
-          <div className={`w-0.75 h-1 rounded-full motion-safe:animate-bounce-sm mt-1.25 ${isDarkMode ? "bg-cyan-400" : "bg-cyan-700"}`} />
+          <div
+            className={`w-0.75 h-1 rounded-full motion-safe:animate-bounce-sm mt-1.25 ${isDarkMode ? "bg-cyan-400" : "bg-cyan-700"}`}
+          />
         </div>
       </div>
     </section>
