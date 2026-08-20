@@ -7,7 +7,7 @@ import advice from "../assets/syo43ktrlu3huqaqye2c.jpg";
 import echo from "../assets/Screenshot 2026-07-30 112123.png";
 import { Link } from "react-router-dom";
 import { RxDoubleArrowRight } from "react-icons/rx";
-// import Projectspage from "../pages/Projectspage";
+
 
 interface ProjectItem {
   title: string;

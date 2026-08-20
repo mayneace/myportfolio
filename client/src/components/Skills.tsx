@@ -3,7 +3,6 @@ import { skills } from "../types/skillsData";
 import { SkillsMarquee } from "./SkillsMaequee";
 // import AssembleSection from "./AssembleSection";
 // import { skills } from './skillsData';
-import "../fonts.css";
 
 interface skillsProps {
   isDarkMode: boolean;

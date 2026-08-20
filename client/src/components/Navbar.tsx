@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoMoonOutline } from "react-icons/io5";
 import { FiSun } from "react-icons/fi";
-// import navlogo from "../assets/homeLogo1.png";
-import navlogo2 from "../assets/homeLogo2.png";
+import navlogo2 from "../assets/3dlogo.png";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Dropdown from "./Dropdown";

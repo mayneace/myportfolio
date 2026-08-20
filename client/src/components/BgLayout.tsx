@@ -12,22 +12,6 @@ export const BgLayout: React.FC<LayoutProps> = ({ children, isDarkMode }) => {
   // 1. Remove the local useState for isDarkMode
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  // const [isDesktopCursor, setIsDesktopCursor] = useState(false);
-  // const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
-  // const [isMouseDown, setIsMouseDown] = useState(false);
-
-  // Handle mouse movement for sci-fi spotlight grid
-  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-  //   const el = containerRef.current;
-  //   if (!el) return;
-  //   const rect = el.getBoundingClientRect();
-  //   setMousePosition({
-  //     x: e.clientX - rect.left,
-  //     y: e.clientY - rect.top,
-  //   });
-  // };
-
   // Custom Cursor Mouse Listener
   useEffect(() => {
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");

@@ -1,30 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import { GoDotFill } from "react-icons/go";
-// import Typewriter from "typewriter-effect";
-// import { MdEmail } from "react-icons/md";
-// import { FiDownload } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
 import { IoLogoWhatsapp } from "react-icons/io";
 import avatar from "../assets/Gemini_Generated_Image_crk1gccrk1gccrk1.png";
-import {
-  // Computer,
-  Mail,
-  Download,
-  // Moon,
-  // Sun,
-  // ExternalLink,
-  // Code2,
-  // Briefcase,
-  // User,
-  Cpu,
-  MessageSquare,
-  // CheckCircle2,
-  // Menu,
-  // X,
-  // ArrowDown,
-} from "lucide-react";
+import { Mail, Download, Cpu, MessageSquare } from "lucide-react";
 import ParticlesBackground from "./ParticlesBackground";
-// import AssembleSection from "./AssembleSection";
 
 interface RotationState {
   x: number;
@@ -44,13 +23,6 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   const [rotate, setRotate] = useState<RotationState>({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState("");
 
-  // Custom Cursor States
-  // const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
-  // const [cursorRingPos, setCursorRingPos] = useState({ x: -100, y: -100 });
-  // const [isHovering, setIsHovering] = useState(false);
-  // const [isMouseDown, setIsMouseDown] = useState(false);
-  // const [isDesktopCursor, setIsDesktopCursor] = useState(false);
-
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
@@ -67,34 +39,6 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Custom Cursor Mouse Listener
-  // useEffect(() => {
-  // const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-  // setIsDesktopCursor(mediaQuery.matches);
-
-  // const handleMediaChange = (e: MediaQueryListEvent) =>
-  // setIsDesktopCursor(e.matches);
-  // mediaQuery.addEventListener("change", handleMediaChange);
-
-  // const handleMousePosition = (e: MouseEvent) => {
-  // setCursorPos({ x: e.clientX, y: e.clientY });
-  // };
-
-  // const handleMouseDown = () => setIsMouseDown(true);
-  // const handleMouseUp = () => setIsMouseDown(false);
-
-  // window.addEventListener("mousemove", handleMousePosition);
-  // window.addEventListener("mousedown", handleMouseDown);
-  // window.addEventListener("mouseup", handleMouseUp);
-
-  // return () => {
-  // mediaQuery.removeEventListener("change", handleMediaChange);
-  // window.removeEventListener("mousemove", handleMousePosition);
-  // window.removeEventListener("mousedown", handleMouseDown);
-  // window.removeEventListener("mouseup", handleMouseUp);
-  // };
-  // }, []);
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget.getBoundingClientRect();
 
@@ -105,10 +49,6 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
     // Max 15-degree tilt
     setRotate({ x: x * 15, y: -y * 15 });
   };
-
-  // const handleMouseLeave = () => {
-  //   setRotate({ x: 0, y: 0 });
-  // };
 
   // Typewriter sequence strings
   const words = [
@@ -377,27 +317,20 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
                     : "bg-linear-to-b from-slate-50/5 via-indigo-50/5 to-sky-100/5 border-indigo-200/60"
                 }`}
               >
-                {/* <radialGradient id="avatarGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#1e1b4b" />
-                  <stop offset="100%" stopColor="#020617" />
-                </radialGradient> */}
                 <img src={avatar} alt="" className="" />
               </div>
             </div>
 
             {/* Cyber badges */}
             <div
-              className={`absolute animate-pulse -bottom-1 -left-2 sm:-left-4 border font-mono text-\[10px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-\[0\_0\_15px\_rgba(99,102,241,0.2)] tracking-wider flex items-center gap-1.5 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border-indigo-500/30 text-cyan-400" : "border-purple-100/20 border-2 bg-linear-to-br from-indigo-600/20 to-purple-600/20 text-gray-800 hover:scale-x-105 shadow-\[0\_10px\_25px\_rgba(0,0,0,0.13)]"}`}
+              className={`absolute -bottom-1 -left-2 sm:-left-4 border text-[10px] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl tracking-wider flex items-center gap-1.5 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border-indigo-500/30 text-cyan-400" : "border-purple-100/20 border-2 bg-linear-to-br from-indigo-600/20 to-purple-600/20 text-gray-800 hover:scale-x-105"}`}
             >
-              <Cpu
-                size={10}
-                className="animate-[pulse_1s_infinite] sm:w-4 sm:h-4"
-              />
+              <Cpu size={10} className="animate-pulse sm:w-4 sm:h-4" />
               <span>1+ yr exp</span>
             </div>
 
             <div
-              className={`absolute animate-pulse -top-1 -right-2 sm:-right-4  font-mono text-\[10px] sm:text-xs px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl shadow-\[0\_0\_15px\_rgba(6,182,212,0.2)] tracking-wider flex items-center gap-1 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border border-cyan-500/30 text-purple-400" : "border-white/20 border-2 bg-linear-to-br from-gray-400/30 to-gray-300/40 text-purple-700 hover:scale-x-105 shadow-\[0\_10px\_25px\_rgba(0,0,0,0.13)]"}`}
+              className={`absolute -top-1 -right-2 sm:-right-4 text-[10px] px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl tracking-wider flex items-center gap-1 backdrop-blur-xs transition-transform duration-500 ${isDarkMode ? "bg-slate-950/90 border border-cyan-500/30 text-purple-400" : "border-white/20 border-2 bg-linear-to-br from-gray-400/30 to-gray-300/40 text-purple-700 hover:scale-x-105"}`}
             >
               <span
                 className={`${isDarkMode ? "text-cyan-400" : "text-cyan-600"} `}
@@ -425,17 +358,17 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
       >
         <span
           className={`text-[10px] tracking-widest font-semibold uppercase opacity-30 ${
-            isDarkMode ? "text-gray-400" : "text-gray-600"
+            isDarkMode ? "text-gray-200" : "text-gray-700"
           }`}
         >
           Explore
         </span>
         <div
-          className={`w-5 h-8 rounded-full border-2 flex justify-center items-start p-1 ${
-            isDarkMode ? "border-slate-700" : "border-gray-300"
+          className={`w-5 h-8 rounded-full border flex justify-center items-start p-1 ${
+            isDarkMode ? "border-slate-600" : "border-gray-400"
           }`}
         >
-          <div className="w-0.75 h-1 bg-cyan-400 rounded-full animate-bounce-sm mt-1.25" />
+          <div className={`w-0.75 h-1 rounded-full motion-safe:animate-bounce-sm mt-1.25 ${isDarkMode ? "bg-cyan-400" : "bg-cyan-700"}`} />
         </div>
       </div>
     </section>

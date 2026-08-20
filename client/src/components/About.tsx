@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import avatar from "../assets/Gemini_Generated_Image_tffv8btffv8btffv.png";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
-// import AssembleSection from "./AssembleSection";
 
 interface AboutProps {
   isDarkMode: boolean;
