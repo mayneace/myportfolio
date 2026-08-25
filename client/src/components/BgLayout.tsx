@@ -1,14 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import cursorDark from "../assets/Cursordark32.png";
 import cursorLight from "../assets/Cursorlight32.png";
+import { useTheme } from "../context/ThemeContext";
 
 // Update the interface to accept isDarkMode from the parent
 interface LayoutProps {
   children: React.ReactNode;
-  isDarkMode: boolean;
 }
 
-export const BgLayout: React.FC<LayoutProps> = ({ children, isDarkMode }) => {
+export const BgLayout: React.FC<LayoutProps> = ({ children }) => {
+  const { isDarkMode } = useTheme();
   // 1. Remove the local useState for isDarkMode
   const containerRef = useRef<HTMLDivElement>(null);
 

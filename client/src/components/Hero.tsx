@@ -4,14 +4,11 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import avatar from "../assets/Gemini_Generated_Image_crk1gccrk1gccrk1.png";
 import { Mail, Download, Cpu, MessageSquare } from "lucide-react";
 import ParticlesBackground from "./ParticlesBackground";
+import { useTheme } from "../context/ThemeContext";
 
 interface RotationState {
   x: number;
   y: number;
-}
-
-interface HeroProps {
-  isDarkMode: boolean;
 }
 
 interface SocialLink {
@@ -19,7 +16,8 @@ interface SocialLink {
   href: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
+const Hero: React.FC = () => {
+  const { isDarkMode } = useTheme();
   const [rotate, setRotate] = useState<RotationState>({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState("");
 

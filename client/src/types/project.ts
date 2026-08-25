@@ -3,6 +3,8 @@ import country from "../assets/allcoutries.jpg";
 import advice from "../assets/syo43ktrlu3huqaqye2c.jpg";
 import echo from "../assets/Screenshot 2026-07-30 112123.png";
 import audiophile from "../assets/audiophile.png";
+import age from "../assets/age.jpg";
+import shop from "../assets/shopease.png";
 
 export interface ProjectItem {
   title: string;
@@ -51,6 +53,24 @@ export const projectsData: ProjectItem[] = [
     github: "https://github.com/mayneace/Allcountries",
     image: country,
     featured: true,
+  },
+  {
+    title: "ShopEase🛒 — Full-Stack E-Commerce Website",
+    desc: "ShopEase is a responsive e-commerce platform built to deliver a seamless online shopping experience across multiple product categories, including women's and men's clothing, jewelry, and electronics.",
+    tags: ["JavaScript", "CSS", "HTML5"],
+    link: "https://shopease-gilt-delta.vercel.app/",
+    github: "https://github.com/mayneace/Shopease",
+    image: shop,
+    featured: false,
+  },
+  {
+    title: "Age Calculator App 🧮",
+    desc: "A responsive date-of-birth calculator that computes a user's exact age in years, months, and days from a submitted date.",
+    tags: ["JavaScript", "CSS", "HTML5"],
+    link: "https://age-calculator-sage-seven.vercel.app/",
+    github: "https://github.com/mayneace/Age-Calculator",
+    image: age,
+    featured: false,
   },
   {
     title: "Quote Generator Web App 💭",

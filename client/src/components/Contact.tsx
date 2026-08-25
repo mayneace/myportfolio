@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
-interface ContactProps {
-  isDarkMode: boolean;
-}
+import { useTheme } from "../context/ThemeContext";
+import { FaTelegramPlane } from "react-icons/fa";
 
 // 1. Define the structural shape of your form fields using TypeScript
 interface ContactFormData {
@@ -16,7 +14,8 @@ interface FormStatus {
   message: string;
 }
 
-const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
+const Contact: React.FC = () => {
+  const { isDarkMode } = useTheme();
   // 2. Local state hooks to manage inputs, loading status, and backend feedback
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -48,7 +47,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       const data = await response.json();
 
       if (data.success) {
-        setStatus({ type: "success", message: "Message sent successfully!" });
+        setStatus({ type: "success", message: "Message sent successfully!🎉" });
         setFormData({ name: "", email: "", message: "" }); // Clear inputs on success
       } else {
         setStatus({
@@ -175,7 +174,10 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
             disabled={isLoading}
             className="w-full py-4 bg-linear-to-r from-[#00b0ff] to-[#651fff] text-white font-medium rounded-xl hover:opacity-90 transition-opacity active:scale-[0.99] transform disabled:opacity-50"
           >
-            {isLoading ? "Sending..." : "Send Message"}
+            <div className="flex items-center justify-center gap-2">
+              <FaTelegramPlane />
+              {isLoading ? "Sending..." : "Send Message"}
+            </div>
           </button>
         </form>
 

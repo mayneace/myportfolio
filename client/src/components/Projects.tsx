@@ -9,50 +9,10 @@ import { Link } from "react-router-dom";
 import { RxDoubleArrowRight } from "react-icons/rx";
 // import country from "../assets/allcoutries.jpg";
 import { projectsData } from "../types/project";
+import { useTheme } from "../context/ThemeContext";
 
-// interface ProjectItem {
-//   title: string;
-//   desc: string;
-//   tags: string[];
-//   link: string;
-//   github: string;
-//   image?: string;
-// }
-
-interface ProjectProps {
-  isDarkMode: boolean;
-}
-
-// const projectsData: ProjectItem[] = [
-//   {
-//     title: "Space Tourism — Multi-Page Web Application",
-//     desc: "A sleek, fully responsive multi-page website designed for a fictional space tourism agency. Built with a focus on immersive user experience, modern layout trends, and seamless navigation across celestial destinations, crew profiles, and cutting-edge technology.",
-//     tags: ["React", "HTML5", "TailwindCSS", "TypeScript"],
-//     link: "https://spacetour-delta.vercel.app/",
-//     github: "https://github.com/mayneace/SpaceTour",
-//     image: space,
-//   },
-//   {
-//     title: "Quote Generator Web App",
-//     desc: "A minimalist single-page application built to deliver fresh, inspirational advice at the click of a button. Designed based on Frontend Mentor challenges, this project focuses on API integration, responsive visual hierarchy, and polished user interaction., filters, and historic analytics data.",
-//     tags: ["JavaScript", "React", "API", "HTML5"],
-//     link: "https://advice-two-beta.vercel.app/",
-//     github: "https://github.com/mayneace/Advice",
-//     image: advice,
-//   },
-//   {
-//     title:
-//       "All Countries — REST Countries API explorer with color theme switcher",
-//     desc: "Displays all countries on a homepage as cards, each showing the flag, population, region, and capital, Lets users search for a country by name via an input field, Lets users filter countries by region (Africa, America, Asia, Europe, Oceania) via a dropdown, Clicking a country opens a detail page with expanded info (top-level domain, currencies, languages) plus clickable border-country links to navigate between related countries, Supports light/dark mode toggling.",
-//     tags: ["React", "HTML5", "TailwindCSS", "TypeScript", "API"],
-//     link: "https://allcountries-plum.vercel.app/",
-//     github: "https://github.com/mayneace/Allcountries",
-//     image: country,
-//   },
-//   // Add more projects here to see the full carousel effect!
-// ];
-
-const Project: React.FC<ProjectProps> = ({ isDarkMode }) => {
+const Project: React.FC = () => {
+  const { isDarkMode } = useTheme();
   const featuredProjects = projectsData.filter((p) => p.featured);
 
   return (

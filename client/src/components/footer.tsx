@@ -3,10 +3,7 @@ import { FiGithub } from "react-icons/fi";
 import { Mail } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { useLocation } from "react-router-dom";
-
-interface FooterProps {
-  isDarkMode: boolean;
-}
+import { useTheme } from "../context/ThemeContext";
 
 interface SocialLink {
   label: string;
@@ -14,8 +11,8 @@ interface SocialLink {
   href: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
-  // const [isHovering, setIsHovering] = useState(false);
+const Footer: React.FC = () => {
+  const { isDarkMode } = useTheme();
 
   const location = useLocation();
 

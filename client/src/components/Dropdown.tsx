@@ -1,7 +1,7 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 
 interface DropdownProps {
-  isDarkMode: boolean;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   activeTab: string;
@@ -9,7 +9,6 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
-  isDarkMode,
   mobileMenuOpen,
   setMobileMenuOpen,
   activeTab,
@@ -17,6 +16,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const navItems = ["home", "about", "skills", "projects", "contact"];
 
+  const { isDarkMode } = useTheme();
   return (
     <>
       {/* Background blur overlay */}

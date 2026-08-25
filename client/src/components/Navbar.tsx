@@ -6,15 +6,17 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Dropdown from "./Dropdown";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
-interface NavbarProps {
-  isDarkMode: boolean;
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface NavbarProps {
+//   isDarkMode: boolean;
+//   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
 const NAV_SECTIONS = ["home", "about", "skills", "projects", "contact"];
 
-const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => {
+const Navbar: React.FC = () => {
+  const { isDarkMode, setIsDarkMode } = useTheme();
   const [activeTab, setActiveTab] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -168,7 +170,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => {
 
       {/* Mobile Menu Dropdown */}
       <Dropdown
-        isDarkMode={isDarkMode}
+        // isDarkMode={isDarkMode}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
         activeTab={activeTab}

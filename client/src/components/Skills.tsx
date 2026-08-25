@@ -1,14 +1,10 @@
 import React from "react";
 import { skills } from "../types/skillsData";
 import { SkillsMarquee } from "./SkillsMaequee";
-// import AssembleSection from "./AssembleSection";
-// import { skills } from './skillsData';
+import { useTheme } from "../context/ThemeContext";
 
-interface skillsProps {
-  isDarkMode: boolean;
-}
-
-export const Skills: React.FC<skillsProps> = ({ isDarkMode }) => {
+export const Skills: React.FC = () => {
+  const { isDarkMode } = useTheme();
   return (
     <section
       id="skills"
